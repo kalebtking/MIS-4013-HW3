@@ -2,7 +2,7 @@
 function selectProducts() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("select * from Products;");
+        $stmt = $conn->prepare("use Homework3; select * from Products;");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
