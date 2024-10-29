@@ -19,7 +19,7 @@ while ($product = $products->fetch_assoc()) {
     <td><?php echo $product["ProductPrice"]; ?></td>
     <td><?php echo $product["ProductMaterial"]; ?></td>
   </tr>
-<php 
+<?php 
 }
 ?>
     </tbody>
