@@ -1,4 +1,6 @@
 <?php
+require_once("util-db.php");
+
 function selectProducts() {
     try {
         $conn = get_db_connection();
@@ -7,19 +9,25 @@ function selectProducts() {
             throw new Exception("Failed to connect to the database.");
         }
 
-        // Prepare and execute the PDO query
-        $stmt = $conn->prepare("SELECT * FROM Products;");
-        $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $conn = null; // Close the PDO connection
+        // Execute the query
+        $query = "SELECT * FROM Products";
+        $stmt = $conn->query($query);
+
+        if (!$stmt) {
+            throw new Exception("Query failed: " . $conn->error);
+        }
+
+        $result = $stmt->fetch_all(MYSQLI_ASSOC);
+        $conn->close();
         return $result;
     } catch (Exception $e) {
         if ($conn) {
-            $conn = null;
+            $conn->close();
         }
         throw $e;
     }
 }
 ?>
+
 
 
