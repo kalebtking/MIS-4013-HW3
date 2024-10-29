@@ -1,4 +1,3 @@
-
 <?php
 function selectProducts() {
     try {
@@ -8,18 +7,19 @@ function selectProducts() {
             throw new Exception("Failed to connect to the database.");
         }
 
-        $conn->query("USE Homework3;");
+        // Prepare and execute the PDO query
         $stmt = $conn->prepare("SELECT * FROM Products;");
         $stmt->execute();
-        $result = $stmt->get_result();
-        $conn->close();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $conn = null; // Close the PDO connection
         return $result;
     } catch (Exception $e) {
         if ($conn) {
-            $conn->close();
+            $conn = null;
         }
         throw $e;
     }
 }
 ?>
+
 
