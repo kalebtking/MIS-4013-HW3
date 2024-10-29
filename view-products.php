@@ -10,18 +10,16 @@
       </tr>
     </thead>
     <tbody>
-<?php
-while ($product = $products->fetch_assoc()) {
-?>
-  <tr> 
-    <td><?php echo $product["ProductID"]; ?></td>
-    <td><?php echo $product["ProductName"]; ?></td>
-    <td><?php echo $product["ProductPrice"]; ?></td>
-    <td><?php echo $product["ProductMaterial"]; ?></td>
-  </tr>
-<?php 
-}
-?>
+      <?php foreach ($products as $product): ?>
+        <tr> 
+          <td><?php echo htmlspecialchars($product["ProductID"]); ?></td>
+          <td><?php echo htmlspecialchars($product["ProductName"]); ?></td>
+          <td><?php echo htmlspecialchars($product["ProductPrice"]); ?></td>
+          <td><?php echo htmlspecialchars($product["ProductMaterial"]); ?></td>
+        </tr>
+      <?php endforeach; ?>
     </tbody>
   </table>
 </div>
+
+
