@@ -13,7 +13,7 @@
 <?php
 function get_db_connection(){
     try {
-        $conn = new PDO("mysql:host=homework3db.mysql.database.azure.com;dbname=Homework3 DB", "kalebtking", "sooners!23");
+        $conn = new PDO("mysql:host=homework3db.mysql.database.azure.com;dbname=Homework3", "kalebtking", "sooners!23");
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $conn;
     } catch (PDOException $e) {
