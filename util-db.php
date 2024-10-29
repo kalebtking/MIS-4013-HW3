@@ -11,6 +11,7 @@
 // }
 // ?>
 <?php
+function get_db_connection(){
 $servername = "homework3db.mysql.database.azure.com";
 $username = "kalebtking";
 $password = "sooners!23";
@@ -22,5 +23,6 @@ try {
   echo "Connected successfully";
 } catch(PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
+}
 }
 ?>
