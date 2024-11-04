@@ -6,11 +6,10 @@ function get_db_connection()
     $password = 'sooners!23';
     $db_name = 'homework3db';
 
-    // Establish the connection
-    $conn = mysqli_init();
-    mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
-    
-    if (mysqli_connect_errno($conn)) {
+    // Establish the connection directly with mysqli_connect
+    $conn = mysqli_connect($host, $username, $password, $db_name, 3306);
+
+    if (!$conn) {
         die('Failed to connect to MySQL: ' . mysqli_connect_error());
     }
     
@@ -19,36 +18,8 @@ function get_db_connection()
 ?>
 
 
-// <?php
-// function get_db_connection(){
-//     $dsn = "mysql:host=homework3db.mysql.database.azure.com;dbname=homework3db;charset=utf8mb4";
-//     $username = "kalebtking";
-//     $password = "sooners!23";
 
-//     try {
-//         $conn = new PDO($dsn, $username, $password);
-//         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//         return $conn;
-//     } catch (PDOException $e) {
-//         // Output detailed error information for debugging
-//         die("Database connection failed: " . $e->getMessage());
-//     }
-// }
-// ?>
 
-// <?php
-// function get_db_connection(){
-
-//     // Create connection   
-//     $conn = new mysqli("homework3db.mysql.database.azure.com", "kalebtking", "sooners!23", "homework3db");
-
-//     // Check connection
-//     if ($conn->connect_error) {
-//         return false; // Connection failed
-//     }
-//     return $conn; // Connection successful
-// }
-// ?>
 
 
 
