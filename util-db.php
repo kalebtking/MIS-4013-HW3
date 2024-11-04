@@ -1,16 +1,3 @@
-// <?php
-// function get_db_connection(){
-
-//     // Create connection   
-//     $conn = new mysqli("homework3db.mysql.database.azure.com", "kalebtking", "sooners!23", "homework3db");
-
-//     // Check connection
-//     if ($conn->connect_error) {
-//         return false; // Connection failed
-//     }
-//     return $conn; // Connection successful
-// }
-// ?>
 <?php
 function get_db_connection(){
     $dsn = "mysql:host=homework3db.mysql.database.azure.com;dbname=homework3db;charset=utf8mb4";
@@ -28,6 +15,19 @@ function get_db_connection(){
 }
 ?>
 
+// <?php
+// function get_db_connection(){
+
+//     // Create connection   
+//     $conn = new mysqli("homework3db.mysql.database.azure.com", "kalebtking", "sooners!23", "homework3db");
+
+//     // Check connection
+//     if ($conn->connect_error) {
+//         return false; // Connection failed
+//     }
+//     return $conn; // Connection successful
+// }
+// ?>
 
 
 
