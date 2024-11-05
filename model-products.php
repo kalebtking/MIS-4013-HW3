@@ -9,7 +9,7 @@ function selectProducts() {
     }
 
     // Execute the query
-    $query = "SELECT * FROM Products";
+    $query = "use homework3; select * from products;";
     $result = mysqli_query($conn, $query);
 
     if (!$result) {
