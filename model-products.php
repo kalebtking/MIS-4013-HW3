@@ -3,13 +3,13 @@ require_once("util-db.php");
 
 function selectProducts() {
     $conn = get_db_connection();
-    
+
     if (!$conn) {
         throw new Exception("Failed to connect to the database.");
     }
 
     // Execute the query
-    $query = "use homework3; select * from products;";
+    $query = "SELECT * FROM Products";
     $result = mysqli_query($conn, $query);
 
     if (!$result) {
@@ -19,9 +19,13 @@ function selectProducts() {
     // Fetch all rows as an associative array
     $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
     
-    // Check if there are products
+    // Debug output
     if (empty($products)) {
-        echo "No products found in the database.";
+        echo "Query executed, but no products found.";
+    } else {
+        echo "Products found: <pre>";
+        print_r($products);
+        echo "</pre>";
     }
 
     // Free result set and close connection
@@ -31,6 +35,7 @@ function selectProducts() {
     return $products;
 }
 ?>
+
 
 
 
