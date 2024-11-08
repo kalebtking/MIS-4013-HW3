@@ -2,9 +2,10 @@
 require_once("util-db.php");
 
 function selectProducts() {
+    
     $conn = get_db_connection();
 
-    if ($conn) {
+    if (!$conn) {
         die("Database connection failed.");
     }
 
