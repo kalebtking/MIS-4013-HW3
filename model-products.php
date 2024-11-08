@@ -9,7 +9,7 @@ function selectProducts() {
         die("Database connection failed.");
     }
 
-    $sql = "select ProductID, ProductName, ProductPrice, ProductMaterial from Products"
+    $sql = "select ProductID, ProductName, ProductPrice, ProductMaterial from Products";
     $result = $conn->query($sql);
 
     $products = [];
