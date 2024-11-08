@@ -3,7 +3,7 @@ function get_db_connection() {
     $host = 'homework3db.mysql.database.azure.com';
     $username = 'kalebtking';
     $password = 'sooners!23';
-    $db_name = 'homework3db';
+    $db_name = 'homework3';
     $port = 3306;
 
     // Paths to the SSL certificate
