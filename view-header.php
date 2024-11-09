@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css"> <!-- Link to your external CSS file -->
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid"> <!-- Changed to container-fluid for full width -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
@@ -35,4 +35,3 @@
                 </div>
             </div>
         </nav>
-
