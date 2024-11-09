@@ -158,11 +158,12 @@ body {
 
 /* Styling for the logo */
 .logo {
-    width: 100%; /* Make the logo span the entire navbar */
-    height: auto;
-    max-height: 100px; /* Limit the height to keep it from being too large */
-    object-fit: cover; /* Ensure the logo fits well */
+    height: 50px; /* Adjust the height to fit the navbar */
+    width: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't overflow */
+    object-fit: contain; /* Ensure the logo scales within its container */
 }
+
 
 .logo:hover {
     transform: scale(1.05); /* Slightly enlarges the logo on hover for a dynamic effect */
