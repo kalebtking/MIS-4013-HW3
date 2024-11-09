@@ -8,7 +8,7 @@ require_once("model-company.php");
 $companyInfo = getCompanyInfo();
 ?>
 
-<div class="container">
+<div class="container about-container">
     <h1>About <?= htmlspecialchars($companyInfo['CompanyName']) ?></h1>
 
     <?php if ($companyInfo): ?>
@@ -27,4 +27,3 @@ $companyInfo = getCompanyInfo();
 <?php
 include "view-footer.php"; // Include footer
 ?>
-
