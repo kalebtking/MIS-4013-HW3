@@ -17,18 +17,6 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        .product-table thead {
-            background-color: #007bff;
-            color: #ffffff;
-        }
-        .product-table th, .product-table td {
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
-        .product-table tbody tr:hover {
-            background-color: #f1f1f1;
-        }
         .product-header {
             text-align: center;
             margin-bottom: 20px;
@@ -45,10 +33,10 @@
 
 <?php
 $pageTitle = "Products";
-include "view-header.php";
+include "view-header.php";  // This will include the navbar
 ?>
 
-<h1 class="mb-4">Our Products</h1>
+<h1 class="mb-4 product-header">Our Products</h1>
 
 <div class="row">
   <?php if (!empty($products)): ?>
@@ -74,9 +62,8 @@ include "view-header.php";
 </div>
 
 <?php
-include "view-footer.php";
+include "view-footer.php";  // This includes the footer and closing tags
 ?>
-
 
 </body>
 </html>
