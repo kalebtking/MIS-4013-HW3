@@ -8,7 +8,7 @@ require_once("model-reviews.php"); // Include the model for database interaction
 $reviews = selectReviews();
 ?>
 
-<div class="container">
+<div class="container reviews-container">
     <h1>Customer Reviews</h1>
     <p>See what our customers have to say about our products:</p>
 
