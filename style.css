@@ -169,5 +169,22 @@ body {
     transform: scale(1.05); /* Slightly enlarges the logo on hover for a dynamic effect */
 }
 
+/* Styling for the navbar links */
+.navbar-nav .nav-link {
+    font-weight: bold; /* Bold text */
+    flex: 1; /* Make the links span evenly across the width */
+    text-align: center; /* Center the text */
+}
+
+/* Ensure navbar expands across the full width */
+.navbar {
+    width: 100%;
+}
+
+/* Adjusting container to use full width */
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
 
 
