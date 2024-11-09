@@ -156,4 +156,18 @@ body {
     background-color: #0056b3;
 }
 
+/* Styling for the logo */
+.logo {
+    width: 150px; /* Adjust the size as needed */
+    height: auto;
+    margin-right: 15px; /* Add space between the logo and adjacent elements */
+    display: inline-block; /* Ensures the logo aligns well in a navigation bar */
+    transition: transform 0.3s; /* Add a subtle effect */
+}
+
+.logo:hover {
+    transform: scale(1.05); /* Slightly enlarges the logo on hover for a dynamic effect */
+}
+
+
 
