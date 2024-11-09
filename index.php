@@ -5,7 +5,7 @@ include "view-header.php"; // Include the shared header file
 
 <div class="container home-container">
     <h1 class="home-header">Welcome to RUN</h1>
-    <img src="RUN.png" alt="RUN logo" class="logo">
+    <img src="RUN.png" alt="RUN logo" class="hero-image">
     
     <div class="home-section">
         <h2>About Us</h2>
