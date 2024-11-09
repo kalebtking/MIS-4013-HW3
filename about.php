@@ -1,11 +1,30 @@
 <?php
 $pageTitle = "About Us";
-include "view-header.php";
+include "view-header.php"; // Include header
+
+require_once("model-company.php");
+
+// Get company information from the database
+$companyInfo = getCompanyInfo();
 ?>
-<h1>About RUN</h1>
-<p>RUN is dedicated to providing high-quality running gear and apparel for athletes of all levels. We believe in combining comfort, performance, and style to enhance your running experience.</p>
-<img src="images/about-us.jpg" class="img-fluid rounded mb-3" alt="About RUN">
-<p>Our journey began with a passion for running and a commitment to providing runners with the best products available. Whether you're preparing for your first 5K or training for a marathon, RUN is here to support you every step of the way.</p>
+
+<div class="container">
+    <h1>About <?= htmlspecialchars($companyInfo['CompanyName']) ?></h1>
+
+    <?php if ($companyInfo): ?>
+        <p><strong>Mission:</strong> <?= htmlspecialchars($companyInfo['MissionStatement']) ?></p>
+        <p><strong>Vision:</strong> <?= htmlspecialchars($companyInfo['Vision']) ?></p>
+        <p><strong>History:</strong> <?= nl2br(htmlspecialchars($companyInfo['History'])) ?></p>
+        <p><strong>Core Values:</strong> <?= htmlspecialchars($companyInfo['CoreValues']) ?></p>
+        <p><strong>Our Team:</strong> <?= nl2br(htmlspecialchars($companyInfo['TeamInfo'])) ?></p>
+        <p><strong>Achievements:</strong> <?= htmlspecialchars($companyInfo['Achievements']) ?></p>
+        <p>Contact us at <a href="mailto:<?= htmlspecialchars($companyInfo['ContactEmail']) ?>"><?= htmlspecialchars($companyInfo['ContactEmail']) ?></a> or call us at <?= htmlspecialchars($companyInfo['ContactPhone']) ?></p>
+    <?php else: ?>
+        <p>Company information is not available at the moment.</p>
+    <?php endif; ?>
+</div>
+
 <?php
-include "view-footer.php";
+include "view-footer.php"; // Include footer
 ?>
+
