@@ -172,19 +172,20 @@ body {
 /* Styling for the navbar links */
 .navbar-nav .nav-link {
     font-weight: bold; /* Bold text */
-    flex: 1; /* Make the links span evenly across the width */
+    flex: 1; /* Ensures links take up available space */
     text-align: center; /* Center the text */
 }
 
-/* Ensure navbar expands across the full width */
+/* Full-width adjustments */
 .navbar {
-    width: 100%;
+    width: 100%; /* Ensure full width */
 }
 
-/* Adjusting container to use full width */
+/* Container-fluid adjustments */
 .container-fluid {
     padding-left: 0;
     padding-right: 0;
 }
+
 
 
