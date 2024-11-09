@@ -1,22 +1,33 @@
 <?php
 $pageTitle = "Reviews";
-include "view-header.php";
+include "view-header.php"; // Include the header
+
+require_once("model-reviews.php"); // Include the model for database interaction
+
+// Get reviews from the database
+$reviews = selectReviews();
 ?>
-<h1>Customer Reviews</h1>
-<p>See what our customers have to say about our products:</p>
-<!-- Sample reviews content -->
-<div class="card mb-3">
-  <div class="card-body">
-    <h5 class="card-title">Great Running Shoes!</h5>
-    <p class="card-text">"These shoes have changed the way I run. Lightweight and super comfortable!" - John D.</p>
-  </div>
+
+<div class="container">
+    <h1>Customer Reviews</h1>
+    <p>See what our customers have to say about our products:</p>
+
+    <?php if (!empty($reviews)): ?>
+        <?php foreach ($reviews as $review): ?>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Review by <?= htmlspecialchars($review['ReviewerName']) ?></h5>
+                    <p class="card-text"><?= htmlspecialchars($review['ReviewText']) ?></p>
+                    <p><strong>Rating:</strong> <?= htmlspecialchars($review['Rating']) ?> / 5</p>
+                    <p class="text-muted">Reviewed on <?= date("F j, Y", strtotime($review['ReviewDate'])) ?></p>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>No reviews available at the moment. Be the first to leave a review!</p>
+    <?php endif; ?>
 </div>
-<div class="card mb-3">
-  <div class="card-body">
-    <h5 class="card-title">Amazing Apparel</h5>
-    <p class="card-text">"The quality of the apparel is top-notch. Keeps me cool even during long runs." - Sarah P.</p>
-  </div>
-</div>
+
 <?php
-include "view-footer.php";
+include "view-footer.php"; // Include the footer
 ?>
