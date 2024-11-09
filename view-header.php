@@ -37,9 +37,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="reviews.php">Reviews</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="account.php">Account</a>
-              </li>
             </ul>
           </div>
         </div>
