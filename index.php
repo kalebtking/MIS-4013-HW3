@@ -4,7 +4,7 @@ include "view-header.php"; // Include the shared header
 ?>
 
 <div class="container home-container">
-    <h1 class="home-header">Welcome to RUN</h1>
+    <h1 class="home-header rubik-glitch-regular">WELCOME TO RUN</h1>
     <div class="home-section">
         <h2>About Us</h2>
         <p>At RUN, we are dedicated to providing premium-quality running shoes and apparel to athletes of all levels. Our mission is to empower you with products that enhance your performance, comfort, and style.</p>
