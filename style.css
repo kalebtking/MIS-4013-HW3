@@ -26,3 +26,39 @@ body {
     color: #888;
     font-style: italic;
 }
+
+/* Styling for the About Us page */
+.about-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.about-container h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.about-container strong {
+    color: #007bff;
+}
+
+.about-container a {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.about-container a:hover {
+    color: #003d7a;
+}
+
