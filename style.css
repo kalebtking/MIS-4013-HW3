@@ -158,10 +158,10 @@ body {
 
 /* Styling for the logo */
 .logo {
-    height: 50px; /* Adjust the height to fit the navbar */
+    height: 50px; /* Adjust to fit the navbar height */
     width: auto; /* Maintain aspect ratio */
     max-width: 100%; /* Ensure it doesn't overflow */
-    object-fit: contain; /* Ensure the logo scales within its container */
+    object-fit: contain; /* Ensures proper scaling */
 }
 
 
@@ -172,14 +172,12 @@ body {
 /* Styling for the navbar links */
 .navbar-nav .nav-link {
     font-weight: bold; /* Bold text */
-    font-size: 18px; /* Adjust the size as needed */
-    padding: 0 15px; /* Add spacing */
-    text-align: center; /* Center the text */
+    text-align: center; /* Center text */
 }
 
-/* Navbar container to ensure full width */
+/* Adjust spacing */
 .navbar {
-    padding: 0; /* Remove padding */
+    padding: 0; /* Remove padding for a flush look */
 }
 
 /* Center alignment for the links */
@@ -187,7 +185,7 @@ body {
     justify-content: center;
 }
 
-/* Container-fluid adjustments */
+/* Ensure the navbar spans full width */
 .container-fluid {
     padding-left: 0;
     padding-right: 0;
