@@ -1,12 +1,10 @@
 <?php
 $pageTitle = "Home";
-include "view-header.php"; // Include the shared header file
+include "view-header.php"; // Include the shared header
 ?>
 
 <div class="container home-container">
     <h1 class="home-header">Welcome to RUN</h1>
-    <img src="RUN.png" alt="RUN logo" class="hero-image">
-    
     <div class="home-section">
         <h2>About Us</h2>
         <p>At RUN, we are dedicated to providing premium-quality running shoes and apparel to athletes of all levels. Our mission is to empower you with products that enhance your performance, comfort, and style.</p>
@@ -27,6 +25,5 @@ include "view-header.php"; // Include the shared header file
 </div>
 
 <?php
-include "view-footer.php"; // Include the shared footer file
+include "view-footer.php"; // Include the shared footer
 ?>
-
