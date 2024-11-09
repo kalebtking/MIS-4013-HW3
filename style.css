@@ -158,11 +158,10 @@ body {
 
 /* Styling for the logo */
 .logo {
-    width: 150px; /* Adjust the size as needed */
+    width: 100%; /* Make the logo span the entire navbar */
     height: auto;
-    margin-right: 15px; /* Add space between the logo and adjacent elements */
-    display: inline-block; /* Ensures the logo aligns well in a navigation bar */
-    transition: transform 0.3s; /* Add a subtle effect */
+    max-height: 100px; /* Limit the height to keep it from being too large */
+    object-fit: cover; /* Ensure the logo fits well */
 }
 
 .logo:hover {
@@ -172,13 +171,19 @@ body {
 /* Styling for the navbar links */
 .navbar-nav .nav-link {
     font-weight: bold; /* Bold text */
-    flex: 1; /* Ensures links take up available space */
+    font-size: 18px; /* Adjust the size as needed */
+    padding: 0 15px; /* Add spacing */
     text-align: center; /* Center the text */
 }
 
-/* Full-width adjustments */
+/* Navbar container to ensure full width */
 .navbar {
-    width: 100%; /* Ensure full width */
+    padding: 0; /* Remove padding */
+}
+
+/* Center alignment for the links */
+.navbar-collapse {
+    justify-content: center;
 }
 
 /* Container-fluid adjustments */
