@@ -31,11 +31,6 @@
 </head>
 <body>
 
-<?php
-$pageTitle = "Products";
-include "view-header.php";  // This will include the navbar
-?>
-
 <h1 class="mb-4 product-header">Our Products</h1>
 
 <div class="row">
@@ -61,9 +56,6 @@ include "view-header.php";  // This will include the navbar
   <?php endif; ?>
 </div>
 
-<?php
-include "view-footer.php";  // This includes the footer and closing tags
-?>
 
 </body>
 </html>
