@@ -43,35 +43,40 @@
 </head>
 <body>
 
-<h1 class="product-header">Our Products</h1>
-<div class="table-responsive">
-  <table class="table product-table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Material</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php if (!empty($products)): ?>
-        <?php foreach ($products as $product): ?>
-          <tr>
-            <td><?php echo htmlspecialchars($product["ProductID"]); ?></td>
-            <td><?php echo htmlspecialchars($product["ProductName"]); ?></td>
-            <td>$<?php echo number_format(htmlspecialchars($product["ProductPrice"]), 2); ?></td>
-            <td><?php echo htmlspecialchars($product["ProductMaterial"]); ?></td>
-          </tr>
-        <?php endforeach; ?>
-      <?php else: ?>
-        <tr>
-          <td colspan="4" class="no-products">No products available.</td>
-        </tr>
-      <?php endif; ?>
-    </tbody>
-  </table>
+<?php
+$pageTitle = "Products";
+include "view-header.php";
+?>
+
+<h1 class="mb-4">Our Products</h1>
+
+<div class="row">
+  <?php if (!empty($products)): ?>
+    <?php foreach ($products as $product): ?>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"><?php echo htmlspecialchars($product["ProductName"]); ?></h5>
+            <p class="card-text">
+              <strong>Material:</strong> <?php echo htmlspecialchars($product["ProductMaterial"]); ?><br>
+              <strong>Price:</strong> $<?php echo number_format(htmlspecialchars($product["ProductPrice"]), 2); ?>
+            </p>
+            <a href="product-details.php?id=<?php echo $product["ProductID"]; ?>" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+    <?php endforeach; ?>
+  <?php else: ?>
+    <div class="col-12">
+      <p class="text-center">No products available at the moment. Please check back later.</p>
+    </div>
+  <?php endif; ?>
 </div>
+
+<?php
+include "view-footer.php";
+?>
+
 
 </body>
 </html>
