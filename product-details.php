@@ -1,23 +1,21 @@
+<?php
+// Enable error reporting
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-
-
-<?php
-// Start the session and include database connection and necessary functions
+// Include database connection and check for POST variable
 require_once("util-db.php");
 
 if (!isset($_POST['ProductID'])) {
-    echo "Product ID not set in POST.";
+    echo "No product selected.";
     exit;
 }
-
 
 // Retrieve the ProductID from POST
 $productID = intval($_POST['ProductID']);
 
-// Get product details from the database
+// Database query to fetch product details
 $conn = get_db_connection();
 $stmt = $conn->prepare("SELECT ProductName, ProductMaterial, ProductPrice, ProductDescription FROM Products WHERE ProductID = ?");
 $stmt->bind_param("i", $productID);
@@ -35,6 +33,7 @@ if ($result->num_rows > 0) {
 $stmt->close();
 $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
