@@ -9,7 +9,7 @@ if (!isset($_POST['ProductID'])) {
 $productID = intval($_POST['ProductID']);
 
 $conn = get_db_connection();
-$stmt = $conn->prepare("SELECT ProductName, ProductMaterial, ProductPrice FROM Products WHERE ProductID = ?");
+$stmt = $conn->prepare("SELECT ProductName, ProductMaterial, ProductPrice, ProductDescription FROM Products WHERE ProductID = ?");
 $stmt->bind_param("i", $productID);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -38,6 +38,7 @@ $conn->close();
         <h1><?php echo htmlspecialchars($product['ProductName']); ?></h1>
         <p><strong>Material:</strong> <?php echo htmlspecialchars($product['ProductMaterial']); ?></p>
         <p><strong>Price:</strong> $<?php echo number_format($product['ProductPrice'], 2); ?></p>
+        <p><strong>Description:</strong> <?php echo htmlspecialchars($product['ProductDescription']); ?></p>
         <a href="products.php" class="btn btn-secondary">Back to Products</a>
     </div>
 </body>
