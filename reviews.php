@@ -10,8 +10,7 @@ $reviews = selectReviews();
 
 <div class="container reviews-container">
     <h1 class="rubik-glitch-regular">CUSTOMER REVIEWS</h1>
-    <p>See what our customers have to say about our products:</p>
-
+    
     <?php if (!empty($reviews)): ?>
         <?php foreach ($reviews as $review): ?>
             <div class="card mb-3">
