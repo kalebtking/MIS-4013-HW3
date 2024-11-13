@@ -9,7 +9,7 @@ $reviews = selectReviews();
 ?>
 
 <div class="container reviews-container">
-    <h1>Customer Reviews</h1>
+    <h1 class="rubik-glitch-regular">Customer Reviews</h1>
     <p>See what our customers have to say about our products:</p>
 
     <?php if (!empty($reviews)): ?>
