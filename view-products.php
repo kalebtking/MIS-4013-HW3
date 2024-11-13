@@ -11,28 +11,30 @@
 <h1 class="mb-4 home-header rubik-glitch-regular">OUR PRODUCTS</h1>
 
 <div class="row">
-  <?php if (!empty($products)): ?>
-    <?php foreach ($products as $product): ?>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title"><?php echo htmlspecialchars($product["ProductName"]); ?></h5>
-            <p class="card-text">
-              <strong>Material:</strong> <?php echo htmlspecialchars($product["ProductMaterial"]); ?><br>
-              <strong>Price:</strong> $<?php echo number_format(htmlspecialchars($product["ProductPrice"]), 2); ?>
-            </p>
-            <a href="product-details.php?id=<?php echo $product["ProductID"]; ?>" class="btn btn-primary">View Details</a>
-          </div>
+    <?php if (!empty($products)): ?>
+        <?php foreach ($products as $product): ?>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo htmlspecialchars($product["ProductName"]); ?></h5>
+                        <p class="card-text">
+                            <strong>Material:</strong> <?php echo htmlspecialchars($product["ProductMaterial"]); ?><br>
+                            <strong>Price:</strong> $<?php echo number_format(htmlspecialchars($product["ProductPrice"]), 2); ?>
+                        </p>
+                        <!-- Form for View Details button -->
+                        <form action="product-details.php" method="post">
+                            <input type="hidden" name="ProductID" value="<?php echo htmlspecialchars($product["ProductID"]); ?>">
+                            <button type="submit" class="btn btn-primary">View Details</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <div class="col-12">
+            <p class="text-center">No products available at the moment. Please check back later.</p>
         </div>
-      </div>
-    <?php endforeach; ?>
-  <?php else: ?>
-    <div class="col-12">
-      <p class="text-center">No products available at the moment. Please check back later.</p>
-    </div>
-  <?php endif; ?>
+    <?php endif; ?>
 </div>
-
-
 </body>
 </html>
