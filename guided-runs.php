@@ -7,7 +7,7 @@ $runs = getGuidedRuns();
 ?>
 
 <div class="container">
-    <h1 class="rubik-glitch-regular">Guided Runs</h1>
+    <h1 class="home-header rubik-glitch-regular">GUIDED RUNS</h1>
     <?php if (!empty($runs)): ?>
         <table class="table">
             <thead>
