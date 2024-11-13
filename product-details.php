@@ -1,3 +1,9 @@
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+
 <?php
 // Start the session and include database connection and necessary functions
 require_once("util-db.php");
