@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h1 class="mb-4 product-header rubik-glitch-regular">OUR PRODUCTS</h1>
+<h1 class="mb-4 home-header rubik-glitch-regular">OUR PRODUCTS</h1>
 
 <div class="row">
   <?php if (!empty($products)): ?>
