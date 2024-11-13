@@ -9,7 +9,7 @@ $companyInfo = getCompanyInfo();
 ?>
 
 <div class="container about-container">
-    <h1>About <?= htmlspecialchars($companyInfo['CompanyName']) ?></h1>
+    <h1 class="rubik-glitch-regular">About <?= htmlspecialchars($companyInfo['CompanyName']) ?></h1>
 
     <?php if ($companyInfo): ?>
         <p><strong>Mission:</strong> <?= htmlspecialchars($companyInfo['MissionStatement']) ?></p>
