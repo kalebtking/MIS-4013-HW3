@@ -8,11 +8,11 @@ error_reporting(E_ALL);
 // Start the session and include database connection and necessary functions
 require_once("util-db.php");
 
-// Check if the ProductID is set in POST
 if (!isset($_POST['ProductID'])) {
-    echo "No product selected.";
+    echo "Product ID not set in POST.";
     exit;
 }
+
 
 // Retrieve the ProductID from POST
 $productID = intval($_POST['ProductID']);
