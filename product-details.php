@@ -1,10 +1,4 @@
 <?php
-// Enable error reporting
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-// Include database connection and check for POST variable
 require_once("util-db.php");
 
 if (!isset($_POST['ProductID'])) {
@@ -12,12 +6,10 @@ if (!isset($_POST['ProductID'])) {
     exit;
 }
 
-// Retrieve the ProductID from POST
 $productID = intval($_POST['ProductID']);
 
-// Database query to fetch product details
 $conn = get_db_connection();
-$stmt = $conn->prepare("SELECT ProductName, ProductMaterial, ProductPrice, ProductDescription FROM Products WHERE ProductID = ?");
+$stmt = $conn->prepare("SELECT ProductName, ProductMaterial, ProductPrice FROM Products WHERE ProductID = ?");
 $stmt->bind_param("i", $productID);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -29,11 +21,9 @@ if ($result->num_rows > 0) {
     exit;
 }
 
-// Close database connection
 $stmt->close();
 $conn->close();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +38,6 @@ $conn->close();
         <h1><?php echo htmlspecialchars($product['ProductName']); ?></h1>
         <p><strong>Material:</strong> <?php echo htmlspecialchars($product['ProductMaterial']); ?></p>
         <p><strong>Price:</strong> $<?php echo number_format($product['ProductPrice'], 2); ?></p>
-        <p><strong>Description:</strong> <?php echo htmlspecialchars($product['ProductDescription']); ?></p>
         <a href="products.php" class="btn btn-secondary">Back to Products</a>
     </div>
 </body>
