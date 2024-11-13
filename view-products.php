@@ -21,7 +21,7 @@
                             <strong>Material:</strong> <?php echo htmlspecialchars($product["ProductMaterial"]); ?><br>
                             <strong>Price:</strong> $<?php echo number_format(htmlspecialchars($product["ProductPrice"]), 2); ?>
                         </p>
-                        <!-- Form for View Details button -->
+                        <!-- Form to post ProductID to product-details.php -->
                         <form action="product-details.php" method="post">
                             <input type="hidden" name="ProductID" value="<?php echo htmlspecialchars($product["ProductID"]); ?>">
                             <button type="submit" class="btn btn-primary">View Details</button>
@@ -36,5 +36,6 @@
         </div>
     <?php endif; ?>
 </div>
+
 </body>
 </html>
