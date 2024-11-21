@@ -26,5 +26,33 @@ function selectReviews() {
     $conn->close();
 
     return $reviews;
+
+    function addReview($productID, $reviewerName, $reviewText, $rating) {
+    $conn = get_db_connection();
+    $stmt = $conn->prepare("INSERT INTO Reviews (ProductID, ReviewerName, ReviewText, Rating, ReviewDate) VALUES (?, ?, ?, ?, NOW())");
+    $stmt->bind_param("issi", $productID, $reviewerName, $reviewText, $rating);
+    $stmt->execute();
+    $stmt->close();
+    $conn->close();
+}
+
+function editReview($reviewID, $reviewerName, $reviewText, $rating) {
+    $conn = get_db_connection();
+    $stmt = $conn->prepare("UPDATE Reviews SET ReviewerName = ?, ReviewText = ?, Rating = ? WHERE ReviewID = ?");
+    $stmt->bind_param("ssii", $reviewerName, $reviewText, $rating, $reviewID);
+    $stmt->execute();
+    $stmt->close();
+    $conn->close();
+}
+
+function deleteReview($reviewID) {
+    $conn = get_db_connection();
+    $stmt = $conn->prepare("DELETE FROM Reviews WHERE ReviewID = ?");
+    $stmt->bind_param("i", $reviewID);
+    $stmt->execute();
+    $stmt->close();
+    $conn->close();
+}
+
 }
 ?>
