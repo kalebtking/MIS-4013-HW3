@@ -38,4 +38,24 @@ function getGuideDetails($guideID) {
 
     return $guide;
 }
+
+// Function to get all guides for dropdowns
+function getAllGuides() {
+    $conn = get_db_connection();
+
+    $sql = "SELECT GuideID, GuideName FROM Guides ORDER BY GuideName";
+    $result = $conn->query($sql);
+
+    $guides = [];
+    if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $guides[] = $row;
+        }
+    }
+
+    $result->close();
+    $conn->close();
+
+    return $guides;
+}
 ?>
