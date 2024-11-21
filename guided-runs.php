@@ -1,3 +1,13 @@
+<?php
+$pageTitle = "Guided Runs";
+include "view-header.php";
+require_once("model-guided-runs.php");
+
+// Fetch guided runs and guides
+$runs = getGuidedRuns();
+$guides = getAllGuides(); // Function to fetch all guides for the dropdown
+?>
+
 <div class="container">
     <h1 class="home-header rubik-glitch-regular">GUIDED RUNS</h1>
 
@@ -144,3 +154,5 @@
         </div>
     </div>
 </div>
+
+<?php include "view-footer.php"; ?>
