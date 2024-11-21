@@ -7,15 +7,12 @@ error_reporting(E_ALL);
 require_once("util-db.php");
 require_once("model-products.php");
 
-
 $pageTitle = "Products";
 include "view-header.php";
 
 // Get products from the database
 $products = selectProducts();
 
-include "view-products.php";
-include "view-footer.php";
 ?>
 
 <?php if (isset($_GET["status"])): ?>
@@ -27,4 +24,7 @@ include "view-footer.php";
     </div>
 <?php endif; ?>
 
-
+<?php
+include "view-products.php";
+include "view-footer.php";
+?>
