@@ -1,6 +1,7 @@
 <?php
 require_once("util-db.php");
 
+// Function to select all reviews
 function selectReviews() {
     $conn = get_db_connection();
 
@@ -26,8 +27,10 @@ function selectReviews() {
     $conn->close();
 
     return $reviews;
+}
 
-    function addReview($productID, $reviewerName, $reviewText, $rating) {
+// Function to add a new review
+function addReview($productID, $reviewerName, $reviewText, $rating) {
     $conn = get_db_connection();
     $stmt = $conn->prepare("INSERT INTO Reviews (ProductID, ReviewerName, ReviewText, Rating, ReviewDate) VALUES (?, ?, ?, ?, NOW())");
     $stmt->bind_param("issi", $productID, $reviewerName, $reviewText, $rating);
@@ -36,6 +39,7 @@ function selectReviews() {
     $conn->close();
 }
 
+// Function to edit an existing review
 function editReview($reviewID, $reviewerName, $reviewText, $rating) {
     $conn = get_db_connection();
     $stmt = $conn->prepare("UPDATE Reviews SET ReviewerName = ?, ReviewText = ?, Rating = ? WHERE ReviewID = ?");
@@ -45,6 +49,7 @@ function editReview($reviewID, $reviewerName, $reviewText, $rating) {
     $conn->close();
 }
 
+// Function to delete a review
 function deleteReview($reviewID) {
     $conn = get_db_connection();
     $stmt = $conn->prepare("DELETE FROM Reviews WHERE ReviewID = ?");
@@ -52,7 +57,5 @@ function deleteReview($reviewID) {
     $stmt->execute();
     $stmt->close();
     $conn->close();
-}
-
 }
 ?>
