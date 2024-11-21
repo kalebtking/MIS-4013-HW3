@@ -11,6 +11,16 @@ $reviews = selectReviews();
 <div class="container reviews-container">
     <h1 class="rubik-glitch-regular">CUSTOMER REVIEWS</h1>
 
+    <!-- Display Notifications -->
+    <?php if (isset($_GET["status"])): ?>
+        <div class="alert alert-success">
+            <?php if ($_GET["status"] === "added") echo "Review added successfully!"; ?>
+            <?php if ($_GET["status"] === "edited") echo "Review updated successfully!"; ?>
+            <?php if ($_GET["status"] === "deleted") echo "Review deleted successfully!"; ?>
+            <?php if ($_GET["status"] === "error") echo "An error occurred. Please try again."; ?>
+        </div>
+    <?php endif; ?>
+
     <!-- Add Review Button -->
     <div class="mb-4">
         <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addReviewModal">Add Review</button>
@@ -107,11 +117,6 @@ $reviews = selectReviews();
         </div>
     </div>
 </div>
-<?php if (isset($_GET["status"])): ?>
-    <div class="alert alert-success">
-        <?php if ($_GET["status"] === "added") echo "Review added successfully!"; ?>
-        <?php if ($_GET["status"] === "edited") echo "Review updated successfully!"; ?>
-
 
 <?php
 include "view-footer.php"; // Include the footer
