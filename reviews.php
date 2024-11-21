@@ -11,20 +11,30 @@ $reviews = selectReviews();
 <div class="container reviews-container">
     <h1 class="rubik-glitch-regular">CUSTOMER REVIEWS</h1>
 
-    <!-- Display Notifications -->
+    <!-- Add Review Button -->
+    <div class="mb-4">
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addReviewModal">Add Review</button>
+    </div>
+
     <?php if (isset($_GET["status"])): ?>
-        <div class="alert alert-success">
+        <div id="notification" class="alert alert-success">
             <?php if ($_GET["status"] === "added") echo "Review added successfully!"; ?>
             <?php if ($_GET["status"] === "edited") echo "Review updated successfully!"; ?>
             <?php if ($_GET["status"] === "deleted") echo "Review deleted successfully!"; ?>
             <?php if ($_GET["status"] === "error") echo "An error occurred. Please try again."; ?>
         </div>
+        <script>
+            // Hide the notification after 5 seconds
+            setTimeout(function() {
+                const notification = document.getElementById('notification');
+                if (notification) {
+                    notification.style.transition = "opacity 0.5s ease";
+                    notification.style.opacity = "0";
+                    setTimeout(() => notification.remove(), 500); // Fully remove after fading
+                }
+            }, 5000); // 5 seconds
+        </script>
     <?php endif; ?>
-
-    <!-- Add Review Button -->
-    <div class="mb-4">
-        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addReviewModal">Add Review</button>
-    </div>
 
     <?php if (!empty($reviews)): ?>
         <?php foreach ($reviews as $review): ?>
