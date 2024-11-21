@@ -107,6 +107,11 @@ $reviews = selectReviews();
         </div>
     </div>
 </div>
+<?php if (isset($_GET["status"])): ?>
+    <div class="alert alert-success">
+        <?php if ($_GET["status"] === "added") echo "Review added successfully!"; ?>
+        <?php if ($_GET["status"] === "edited") echo "Review updated successfully!"; ?>
+
 
 <?php
 include "view-footer.php"; // Include the footer
